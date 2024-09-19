@@ -1,0 +1,2593 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Wallet Service API",
+    "version": "0.1.0"
+  },
+  "servers": [
+    {
+      "url": "/wallet_service/api"
+    }
+  ],
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health Check",
+        "operationId": "health_check_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheckResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/company/{inn}/info": {
+      "get": {
+        "tags": [
+          "Company"
+        ],
+        "summary": "Get Company Data",
+        "operationId": "Get_Company_Data_company__inn__info_get",
+        "parameters": [
+          {
+            "name": "inn",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Inn"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CompanyData"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/invoices": {
+      "post": {
+        "tags": [
+          "Invoice"
+        ],
+        "summary": "Create Invoice",
+        "operationId": "Create_Invoice_users__user_id__invoices_post",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/InvoiceCreateResponse"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/invoices/{invoice_id}": {
+      "get": {
+        "tags": [
+          "Invoice"
+        ],
+        "summary": "Get Invoice",
+        "operationId": "get_Invoice_users__user_id__invoices__invoice_id__get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "invoice_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Invoice Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InvoiceResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/payment_transaction": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Payment Transaction",
+        "operationId": "payment_transaction_users__user_id__payment_transaction_post",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionSchemaCreatePaymentServices"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/refill_transaction": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Refill Transaction",
+        "operationId": "refill_transaction_users__user_id__refill_transaction_post",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionSchemaCreateIncome"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/transactions": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get Transactions",
+        "operationId": "get_transactions_users__user_id__transactions_get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginationRequest_TransactionSchema_"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/transactions/{transaction_id}": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get Transaction",
+        "operationId": "get_transaction_users__user_id__transactions__transaction_id__get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "transaction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Transaction Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Update Transaction",
+        "operationId": "update_transaction_users__user_id__transactions__transaction_id__put",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "transaction_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Transaction Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TransactionChangeStatusRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/confirming_invoices": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Confirming Invoices",
+        "operationId": "confirming_invoices_confirming_invoices_get",
+        "parameters": [
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "title": "Response Confirming Invoices Confirming Invoices Get"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/expenses": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get Expenses",
+        "operationId": "get_expenses_users__user_id__expenses_get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "days",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 180,
+              "exclusiveMinimum": 0,
+              "default": 30,
+              "title": "Days"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExpenseResponse"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/refills": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get Refills",
+        "operationId": "get_refills_users__user_id__refills_get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 1,
+              "title": "Page"
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "default": 25,
+              "title": "Size"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaginationRequest"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/acts/{act_id}/file": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get Act File",
+        "operationId": "get_act_file_users__user_id__acts__act_id__file_post",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "act_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Act Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/invoice/{invoice_id}/file": {
+      "post": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Get Invoice File",
+        "operationId": "get_invoice_file_users__user_id__invoice__invoice_id__file_post",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "invoice_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Invoice Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/close_acts": {
+      "get": {
+        "tags": [
+          "Transaction"
+        ],
+        "summary": "Close Act",
+        "operationId": "close_act_close_acts_get",
+        "parameters": [
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean",
+                  "title": "Response Close Act Close Acts Get"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/{user_id}/wallet": {
+      "post": {
+        "tags": [
+          "Wallet"
+        ],
+        "summary": "Create Wallet",
+        "operationId": "Create_wallet_users__user_id__wallet_post",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Wallet"
+        ],
+        "summary": "Get Wallet",
+        "operationId": "Get_wallet_users__user_id__wallet_get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WalletSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/integrator/{user_id}/invited/all": {
+      "get": {
+        "tags": [
+          "Wallet"
+        ],
+        "summary": "Get Wallets",
+        "operationId": "Get_wallets_integrator__user_id__invited_all_get",
+        "parameters": [
+          {
+            "name": "user_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "User Id"
+            }
+          },
+          {
+            "name": "x-request-id",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "f5f2132b-ef09-4106-8a5e-aaaaa403448f",
+              "title": "X-Request-Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/UserWalletResponse"
+                  },
+                  "title": "Response Get Wallets Integrator  User Id  Invited All Get"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Conflict",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Unprocessable Entity"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ServiceErrorPydantic"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CategoryTransactionEnum": {
+        "type": "string",
+        "enum": [
+          "payment services call",
+          "payment services video",
+          "refill",
+          "bonus integrator",
+          "withdrawal"
+        ],
+        "title": "CategoryTransactionEnum"
+      },
+      "CompanyData": {
+        "properties": {
+          "inn": {
+            "type": "string",
+            "title": "INN компании"
+          },
+          "short_name": {
+            "type": "string",
+            "title": "Короткое название",
+            "default": ""
+          },
+          "full_name": {
+            "type": "string",
+            "title": "Полное название",
+            "default": ""
+          },
+          "kpp": {
+            "type": "string",
+            "title": "КПП",
+            "default": ""
+          },
+          "address": {
+            "type": "string",
+            "title": "КПП",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "inn"
+        ],
+        "title": "CompanyData"
+      },
+      "ExpenseResponse": {
+        "properties": {
+          "user_id": {
+            "type": "integer",
+            "title": "User Id"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Amount"
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "amount"
+        ],
+        "title": "ExpenseResponse"
+      },
+      "HealthCheckDetailsSchema": {
+        "properties": {
+          "database": {
+            "$ref": "#/components/schemas/StatusDatabase"
+          },
+          "redis": {
+            "$ref": "#/components/schemas/StatusRedis"
+          },
+          "uptime": {
+            "type": "string",
+            "title": "Uptime"
+          }
+        },
+        "type": "object",
+        "required": [
+          "database",
+          "redis",
+          "uptime"
+        ],
+        "title": "HealthCheckDetailsSchema"
+      },
+      "HealthCheckResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "details": {
+            "$ref": "#/components/schemas/HealthCheckDetailsSchema"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "details"
+        ],
+        "title": "HealthCheckResponse"
+      },
+      "InvoiceCreateResponse": {
+        "properties": {
+          "inn": {
+            "type": "string",
+            "title": "INN компании"
+          },
+          "email": {
+            "type": "string",
+            "title": "Почта",
+            "default": "user@mail.ru"
+          },
+          "phone_number": {
+            "type": "string",
+            "title": "Номер телефона",
+            "default": "+79999999999"
+          }
+        },
+        "type": "object",
+        "required": [
+          "inn"
+        ],
+        "title": "InvoiceCreateResponse"
+      },
+      "InvoiceResponse": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "ID",
+            "description": "ID счета"
+          },
+          "inn": {
+            "type": "string",
+            "title": "INN компании"
+          },
+          "kpp": {
+            "type": "string",
+            "title": "KPP компании"
+          },
+          "email": {
+            "type": "string",
+            "title": "Почта",
+            "default": 0
+          },
+          "phone_number": {
+            "type": "string",
+            "title": "Номер телефона",
+            "default": "RUB"
+          },
+          "name": {
+            "type": "string",
+            "title": "Название компании",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "inn",
+          "kpp"
+        ],
+        "title": "InvoiceResponse"
+      },
+      "InvoiceSchema": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "ID",
+            "description": "ID счета"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Дата создания",
+            "default": "2024-09-19T12:42:05.198311"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Дата обновления",
+            "description": "Дата последнего обновления",
+            "default": "2024-09-19T12:42:05.198355"
+          },
+          "is_delete": {
+            "type": "boolean",
+            "title": "Удален ли пользователь",
+            "default": false
+          },
+          "inn": {
+            "type": "string",
+            "title": "INN компании"
+          },
+          "email": {
+            "type": "string",
+            "title": "Почта",
+            "default": 0
+          },
+          "phone_number": {
+            "type": "string",
+            "title": "Номер телефона",
+            "default": "RUB"
+          }
+        },
+        "type": "object",
+        "required": [
+          "inn"
+        ],
+        "title": "InvoiceSchema"
+      },
+      "PaginationRequest": {
+        "properties": {
+          "page": {
+            "type": "integer",
+            "title": "Страница"
+          },
+          "size": {
+            "type": "integer",
+            "title": "Размер"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Всего"
+          },
+          "data": {
+            "items": {},
+            "type": "array",
+            "title": "Список элементов"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page",
+          "size",
+          "total",
+          "data"
+        ],
+        "title": "PaginationRequest"
+      },
+      "PaginationRequest_TransactionSchema_": {
+        "properties": {
+          "page": {
+            "type": "integer",
+            "title": "Страница"
+          },
+          "size": {
+            "type": "integer",
+            "title": "Размер"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Всего"
+          },
+          "data": {
+            "items": {
+              "$ref": "#/components/schemas/TransactionSchema"
+            },
+            "type": "array",
+            "title": "Список элементов"
+          }
+        },
+        "type": "object",
+        "required": [
+          "page",
+          "size",
+          "total",
+          "data"
+        ],
+        "title": "PaginationRequest[TransactionSchema]"
+      },
+      "ServiceErrorPydantic": {
+        "properties": {
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TypeErrorEnum"
+          },
+          "translate_path": {
+            "type": "string",
+            "title": "Translate Path"
+          },
+          "details": {
+            "type": "string",
+            "title": "Details"
+          }
+        },
+        "type": "object",
+        "required": [
+          "message",
+          "type",
+          "translate_path",
+          "details"
+        ],
+        "title": "ServiceErrorPydantic"
+      },
+      "StatusDatabase": {
+        "type": "string",
+        "enum": [
+          "connected",
+          "disconnected"
+        ],
+        "title": "StatusDatabase"
+      },
+      "StatusRedis": {
+        "type": "string",
+        "enum": [
+          "available",
+          "unavailable"
+        ],
+        "title": "StatusRedis"
+      },
+      "StatusTransactionEnum": {
+        "type": "string",
+        "enum": [
+          "processing",
+          "processing test",
+          "creating_act",
+          "completed",
+          "completed test",
+          "failed",
+          "cancelled",
+          "cancelled test"
+        ],
+        "title": "StatusTransactionEnum"
+      },
+      "TransactionBonusIntegrator": {
+        "properties": {
+          "id_user": {
+            "type": "string",
+            "title": "ID пользователя",
+            "default": ""
+          },
+          "amount": {
+            "type": "number",
+            "title": "Сумма",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "title": "TransactionBonusIntegrator"
+      },
+      "TransactionChangeStatusRequest": {
+        "properties": {
+          "status": {
+            "$ref": "#/components/schemas/StatusTransactionEnum",
+            "title": "Номер счета в тинькофе"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "TransactionChangeStatusRequest"
+      },
+      "TransactionCreateRefill": {
+        "properties": {
+          "invoice_id": {
+            "type": "string",
+            "title": "Номер счета в тинькофе"
+          },
+          "invoice_number": {
+            "type": "string",
+            "title": "Номер счета в тинькофе",
+            "default": ""
+          },
+          "inn": {
+            "type": "string",
+            "title": "ИНН клиента",
+            "default": ""
+          },
+          "phone": {
+            "type": "string",
+            "title": "Номер телефона",
+            "default": ""
+          },
+          "invoice_url": {
+            "type": "string",
+            "title": "Ссылка на номер счета"
+          },
+          "remains": {
+            "type": "number",
+            "title": "Закрыто"
+          },
+          "act_url": {
+            "type": "string",
+            "title": "Ссылка на акт",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "required": [
+          "invoice_id",
+          "invoice_url",
+          "remains"
+        ],
+        "title": "TransactionCreateRefill"
+      },
+      "TransactionPaymentServicesCall": {
+        "properties": {
+          "id_transaction_integrator": {
+            "type": "string",
+            "title": "ID транзакции у интегратора",
+            "default": ""
+          },
+          "duration": {
+            "type": "integer",
+            "title": "Длительность звонка",
+            "default": 0
+          },
+          "price_second": {
+            "type": "number",
+            "title": "Цена секунды звонка",
+            "default": 0
+          },
+          "text_call": {
+            "type": "string",
+            "title": "Текст звонка",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "title": "TransactionPaymentServicesCall"
+      },
+      "TransactionSchema": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "ID",
+            "description": "ID транзакции"
+          },
+          "amount": {
+            "type": "number",
+            "title": "Сумма транзакции",
+            "default": 0
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Дата создания",
+            "default": 0
+          },
+          "category": {
+            "$ref": "#/components/schemas/CategoryTransactionEnum",
+            "title": "Категория транзакции",
+            "default": "payment services call"
+          },
+          "wallet_id": {
+            "type": "integer",
+            "title": "ID кошелька"
+          },
+          "status": {
+            "$ref": "#/components/schemas/StatusTransactionEnum",
+            "title": "Статус транзакции",
+            "default": "processing"
+          },
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/TransactionPaymentServicesCall"
+              },
+              {
+                "$ref": "#/components/schemas/TransactionBonusIntegrator"
+              },
+              {
+                "$ref": "#/components/schemas/TransactionCreateRefill"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Доп данные, тип зависит от категории"
+          }
+        },
+        "type": "object",
+        "title": "TransactionSchema"
+      },
+      "TransactionSchemaCreateIncome": {
+        "properties": {
+          "amount": {
+            "type": "integer",
+            "minimum": 100.0,
+            "title": "Сумма пополнения"
+          },
+          "invoice_id": {
+            "type": "integer",
+            "title": "Номер счета в системе"
+          }
+        },
+        "type": "object",
+        "required": [
+          "amount",
+          "invoice_id"
+        ],
+        "title": "TransactionSchemaCreateIncome"
+      },
+      "TransactionSchemaCreatePaymentServices": {
+        "properties": {
+          "duration": {
+            "type": "integer",
+            "title": "Длительность секунда"
+          },
+          "type": {
+            "$ref": "#/components/schemas/TypeTransactionEnum",
+            "title": "тип транзакции"
+          }
+        },
+        "type": "object",
+        "required": [
+          "duration",
+          "type"
+        ],
+        "title": "TransactionSchemaCreatePaymentServices"
+      },
+      "TypeErrorEnum": {
+        "type": "string",
+        "enum": [
+          "user error",
+          "server error",
+          "unauthorized",
+          "forbidden",
+          "not found",
+          "conflict"
+        ],
+        "title": "TypeErrorEnum"
+      },
+      "TypeTransactionEnum": {
+        "type": "string",
+        "enum": [
+          "call",
+          "video"
+        ],
+        "title": "TypeTransactionEnum"
+      },
+      "UserWalletResponse": {
+        "properties": {
+          "wallet": {
+            "$ref": "#/components/schemas/WalletSchema",
+            "title": "Wallet",
+            "description": "Кошелек"
+          },
+          "name": {
+            "type": "string",
+            "title": "name",
+            "description": "name"
+          },
+          "email": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "email",
+            "description": "email"
+          },
+          "id": {
+            "type": "integer",
+            "title": "email",
+            "description": "email"
+          },
+          "third_party_id": {
+            "type": "string",
+            "title": "third_party_id",
+            "description": "third_party_id"
+          }
+        },
+        "type": "object",
+        "title": "UserWalletResponse"
+      },
+      "WalletSchema": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "ID",
+            "description": "ID настроек"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Дата создания",
+            "default": "2024-09-19T12:42:05.198311"
+          },
+          "updated_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Дата обновления",
+            "description": "Дата последнего обновления",
+            "default": "2024-09-19T12:42:05.198355"
+          },
+          "is_delete": {
+            "type": "boolean",
+            "title": "Удален ли пользователь",
+            "default": false
+          },
+          "user_id": {
+            "type": "string",
+            "title": "ID пользователя"
+          },
+          "wallet_id": {
+            "type": "string",
+            "title": "ID кошелька"
+          },
+          "invoices": {
+            "items": {
+              "$ref": "#/components/schemas/InvoiceSchema"
+            },
+            "type": "array",
+            "title": "Список счетов",
+            "default": []
+          },
+          "is_testing": {
+            "type": "boolean",
+            "title": "Тестовый ли аккаунт"
+          },
+          "testing_end": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Дата окончание"
+          },
+          "currency_code": {
+            "type": "string",
+            "title": "Код валюты",
+            "default": "RUB"
+          },
+          "balance": {
+            "type": "number",
+            "title": "Баланс",
+            "default": 0
+          },
+          "expenses": {
+            "type": "number",
+            "title": "Расход за 30 дней",
+            "default": 0
+          },
+          "opening_balance": {
+            "type": "number",
+            "title": "Стартовый баланс",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "wallet_id",
+          "is_testing"
+        ],
+        "title": "WalletSchema"
+      }
+    }
+  }
+}
