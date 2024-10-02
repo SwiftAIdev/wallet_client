@@ -35,7 +35,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = 'f5f2132b-ef09-4106-8a5e-aaaaa403448f' # str |  (optional) (default to 'f5f2132b-ef09-4106-8a5e-aaaaa403448f')
+    x_request_id = '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99' # str |  (optional) (default to '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99')
 
     try:
         # Create Wallet
@@ -54,7 +54,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;f5f2132b-ef09-4106-8a5e-aaaaa403448f&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;4a063058-9c8c-4e5a-b7f5-f719ab6f4d99&#39;]
 
 ### Return type
 
@@ -110,7 +110,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = 'f5f2132b-ef09-4106-8a5e-aaaaa403448f' # str |  (optional) (default to 'f5f2132b-ef09-4106-8a5e-aaaaa403448f')
+    x_request_id = '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99' # str |  (optional) (default to '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99')
 
     try:
         # Get Wallet
@@ -129,7 +129,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;f5f2132b-ef09-4106-8a5e-aaaaa403448f&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;4a063058-9c8c-4e5a-b7f5-f719ab6f4d99&#39;]
 
 ### Return type
 
@@ -185,7 +185,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = 'f5f2132b-ef09-4106-8a5e-aaaaa403448f' # str |  (optional) (default to 'f5f2132b-ef09-4106-8a5e-aaaaa403448f')
+    x_request_id = '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99' # str |  (optional) (default to '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99')
 
     try:
         # Get Wallets
@@ -204,7 +204,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;f5f2132b-ef09-4106-8a5e-aaaaa403448f&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;4a063058-9c8c-4e5a-b7f5-f719ab6f4d99&#39;]
 
 ### Return type
 

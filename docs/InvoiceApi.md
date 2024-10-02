@@ -36,7 +36,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.InvoiceApi(api_client)
     user_id = 'user_id_example' # str | 
     invoice_create_response = wallet_client.InvoiceCreateResponse() # InvoiceCreateResponse | 
-    x_request_id = 'f5f2132b-ef09-4106-8a5e-aaaaa403448f' # str |  (optional) (default to 'f5f2132b-ef09-4106-8a5e-aaaaa403448f')
+    x_request_id = '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99' # str |  (optional) (default to '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99')
 
     try:
         # Create Invoice
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **invoice_create_response** | [**InvoiceCreateResponse**](InvoiceCreateResponse.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;f5f2132b-ef09-4106-8a5e-aaaaa403448f&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;4a063058-9c8c-4e5a-b7f5-f719ab6f4d99&#39;]
 
 ### Return type
 
@@ -113,7 +113,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.InvoiceApi(api_client)
     user_id = 'user_id_example' # str | 
     invoice_id = 56 # int | 
-    x_request_id = 'f5f2132b-ef09-4106-8a5e-aaaaa403448f' # str |  (optional) (default to 'f5f2132b-ef09-4106-8a5e-aaaaa403448f')
+    x_request_id = '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99' # str |  (optional) (default to '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99')
 
     try:
         # Get Invoice
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **invoice_id** | **int**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;f5f2132b-ef09-4106-8a5e-aaaaa403448f&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;4a063058-9c8c-4e5a-b7f5-f719ab6f4d99&#39;]
 
 ### Return type
 

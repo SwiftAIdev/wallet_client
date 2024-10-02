@@ -28,7 +28,8 @@ class ExpenseResponse(BaseModel):
     """ # noqa: E501
     user_id: StrictInt
     amount: Union[StrictFloat, StrictInt]
-    __properties: ClassVar[List[str]] = ["user_id", "amount"]
+    count: StrictInt
+    __properties: ClassVar[List[str]] = ["user_id", "amount", "count"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +83,8 @@ class ExpenseResponse(BaseModel):
 
         _obj = cls.model_validate({
             "user_id": obj.get("user_id"),
-            "amount": obj.get("amount")
+            "amount": obj.get("amount"),
+            "count": obj.get("count")
         })
         return _obj
 

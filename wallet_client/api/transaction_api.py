@@ -913,7 +913,7 @@ class TransactionApi:
     def get_expenses_users_user_id_expenses_get(
         self,
         user_id: StrictStr,
-        days: Optional[Annotated[int, Field(le=180, strict=True)]] = None,
+        days: Optional[Annotated[int, Field(le=180, strict=True, ge=0)]] = None,
         x_request_id: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -994,7 +994,7 @@ class TransactionApi:
     def get_expenses_users_user_id_expenses_get_with_http_info(
         self,
         user_id: StrictStr,
-        days: Optional[Annotated[int, Field(le=180, strict=True)]] = None,
+        days: Optional[Annotated[int, Field(le=180, strict=True, ge=0)]] = None,
         x_request_id: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -1075,7 +1075,7 @@ class TransactionApi:
     def get_expenses_users_user_id_expenses_get_without_preload_content(
         self,
         user_id: StrictStr,
-        days: Optional[Annotated[int, Field(le=180, strict=True)]] = None,
+        days: Optional[Annotated[int, Field(le=180, strict=True, ge=0)]] = None,
         x_request_id: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,

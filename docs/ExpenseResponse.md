@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_id** | **int** |  | 
 **amount** | **float** |  | 
+**count** | **int** |  | 
 
 ## Example
 
