@@ -68,7 +68,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.CompanyApi(api_client)
     inn = 'inn_example' # str | 
-    x_request_id = '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99' # str |  (optional) (default to '4a063058-9c8c-4e5a-b7f5-f719ab6f4d99')
+    x_request_id = '12a3ca30-c810-4a0d-9a03-d3b08aed3101' # str |  (optional) (default to '12a3ca30-c810-4a0d-9a03-d3b08aed3101')
 
     try:
         # Get Company Data
@@ -87,8 +87,12 @@ All URIs are relative to */wallet_service/api*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CompanyApi* | [**get_company_data_company_inn_info_get**](docs/CompanyApi.md#get_company_data_company_inn_info_get) | **GET** /company/{inn}/info | Get Company Data
+*CompanyApi* | [**v1_get_company_info**](docs/CompanyApi.md#v1_get_company_info) | **GET** /v1/company/{inn}/info | Company:Info
 *InvoiceApi* | [**create_invoice_users_user_id_invoices_post**](docs/InvoiceApi.md#create_invoice_users_user_id_invoices_post) | **POST** /users/{user_id}/invoices | Create Invoice
 *InvoiceApi* | [**get_invoice_users_user_id_invoices_invoice_id_get**](docs/InvoiceApi.md#get_invoice_users_user_id_invoices_invoice_id_get) | **GET** /users/{user_id}/invoices/{invoice_id} | Get Invoice
+*InvoiceApi* | [**v1_create_invoice**](docs/InvoiceApi.md#v1_create_invoice) | **POST** /v1/users/{user_id}/invoices | Users:Create Invoice
+*InvoiceApi* | [**v1_get_invoice_by_id**](docs/InvoiceApi.md#v1_get_invoice_by_id) | **GET** /v1/users/{user_id}/invoices/{invoice_id} | Users:Get Invoice By Id
+*InvoiceApi* | [**v1_get_invoices**](docs/InvoiceApi.md#v1_get_invoices) | **GET** /v1/users/{user_id}/invoices | Users:Get Invoices
 *TransactionApi* | [**close_act_close_acts_get**](docs/TransactionApi.md#close_act_close_acts_get) | **GET** /close_acts | Close Act
 *TransactionApi* | [**confirming_invoices_confirming_invoices_get**](docs/TransactionApi.md#confirming_invoices_confirming_invoices_get) | **GET** /confirming_invoices | Confirming Invoices
 *TransactionApi* | [**get_act_file_users_user_id_acts_act_id_file_post**](docs/TransactionApi.md#get_act_file_users_user_id_acts_act_id_file_post) | **POST** /users/{user_id}/acts/{act_id}/file | Get Act File
@@ -100,9 +104,27 @@ Class | Method | HTTP request | Description
 *TransactionApi* | [**payment_transaction_users_user_id_payment_transaction_post**](docs/TransactionApi.md#payment_transaction_users_user_id_payment_transaction_post) | **POST** /users/{user_id}/payment_transaction | Payment Transaction
 *TransactionApi* | [**refill_transaction_users_user_id_refill_transaction_post**](docs/TransactionApi.md#refill_transaction_users_user_id_refill_transaction_post) | **POST** /users/{user_id}/refill_transaction | Refill Transaction
 *TransactionApi* | [**update_transaction_users_user_id_transactions_transaction_id_put**](docs/TransactionApi.md#update_transaction_users_user_id_transactions_transaction_id_put) | **PUT** /users/{user_id}/transactions/{transaction_id} | Update Transaction
+*TransactionApi* | [**v1_change_status_transaction**](docs/TransactionApi.md#v1_change_status_transaction) | **PUT** /v1/users/users/{user_id}/transactions/{transaction_id} | Users:Change Status Transaction
+*TransactionApi* | [**v1_close_acts**](docs/TransactionApi.md#v1_close_acts) | **POST** /v1/users/close_acts | Users:Close Acts
+*TransactionApi* | [**v1_confirming_invoices**](docs/TransactionApi.md#v1_confirming_invoices) | **GET** /v1/users/confirming_invoices | Users:Confirming Invoices
+*TransactionApi* | [**v1_get_expenses**](docs/TransactionApi.md#v1_get_expenses) | **GET** /v1/users/users/{user_id}/expenses | Users:Get Expenses
+*TransactionApi* | [**v1_get_file_act_by_id**](docs/TransactionApi.md#v1_get_file_act_by_id) | **GET** /v1/users/users/{user_id}/acts/{act_id}/file | Users:Get Act By Id:File
+*TransactionApi* | [**v1_get_file_invoice_by_id**](docs/TransactionApi.md#v1_get_file_invoice_by_id) | **GET** /v1/users/users/{user_id}/invoice/{invoice_id}/file | Users:Get Invoice By Id:File
+*TransactionApi* | [**v1_get_refills**](docs/TransactionApi.md#v1_get_refills) | **GET** /v1/users/users/{user_id}/refills | Users:Get Refills
+*TransactionApi* | [**v1_get_transaction_by_id**](docs/TransactionApi.md#v1_get_transaction_by_id) | **GET** /v1/users/users/{user_id}/transactions/{transaction_id} | Users:Get Transaction By Id
+*TransactionApi* | [**v1_get_transactions**](docs/TransactionApi.md#v1_get_transactions) | **GET** /v1/users/users/{user_id}/transactions | Users:Get Transactions
+*TransactionApi* | [**v1_payment_transaction**](docs/TransactionApi.md#v1_payment_transaction) | **POST** /v1/users/{user_id}/payment_transaction | Users:Payment Transaction
+*TransactionApi* | [**v1_refill_transaction**](docs/TransactionApi.md#v1_refill_transaction) | **POST** /v1/users/users/{user_id}/refill_transaction | Users:Refill Transaction
 *WalletApi* | [**create_wallet_users_user_id_wallet_post**](docs/WalletApi.md#create_wallet_users_user_id_wallet_post) | **POST** /users/{user_id}/wallet | Create Wallet
 *WalletApi* | [**get_wallet_users_user_id_wallet_get**](docs/WalletApi.md#get_wallet_users_user_id_wallet_get) | **GET** /users/{user_id}/wallet | Get Wallet
 *WalletApi* | [**get_wallets_integrator_user_id_invited_all_get**](docs/WalletApi.md#get_wallets_integrator_user_id_invited_all_get) | **GET** /integrator/{user_id}/invited/all | Get Wallets
+*WalletApi* | [**v1_create_wallet**](docs/WalletApi.md#v1_create_wallet) | **POST** /v1/users/{user_id}/wallet | Users:Create Wallet
+*WalletApi* | [**v1_end_wallet_testing**](docs/WalletApi.md#v1_end_wallet_testing) | **POST** /v1/users/{user_id}/wallet/testing/end | Users:End Wallet Testing
+*WalletApi* | [**v1_get_wallet**](docs/WalletApi.md#v1_get_wallet) | **GET** /v1/users/{user_id}/wallet | Users:Get Wallet
+*WalletApi* | [**v1_get_wallets_invited**](docs/WalletApi.md#v1_get_wallets_invited) | **GET** /v1/users/{user_id}/invited/all | Users:Get Wallets Invited
+*WalletApi* | [**v1_resume_wallet_testing**](docs/WalletApi.md#v1_resume_wallet_testing) | **POST** /v1/users/{user_id}/wallet/testing/resume | Users:Resume Wallet Testing
+*WalletApi* | [**v1_start_wallet_testing**](docs/WalletApi.md#v1_start_wallet_testing) | **POST** /v1/users/{user_id}/wallet/testing/start | Users:Start Wallet Testing
+*WalletApi* | [**v1_stop_wallet_testing**](docs/WalletApi.md#v1_stop_wallet_testing) | **POST** /v1/users/{user_id}/wallet/testing/stop | Users:Stop Wallet Testing
 *DefaultApi* | [**health_check_health_get**](docs/DefaultApi.md#health_check_health_get) | **GET** /health | Health Check
 
 
@@ -117,11 +139,13 @@ Class | Method | HTTP request | Description
  - [InvoiceResponse](docs/InvoiceResponse.md)
  - [InvoiceSchema](docs/InvoiceSchema.md)
  - [PaginationRequest](docs/PaginationRequest.md)
+ - [PaginationRequestInvoiceResponse](docs/PaginationRequestInvoiceResponse.md)
  - [PaginationRequestTransactionSchema](docs/PaginationRequestTransactionSchema.md)
  - [ServiceErrorPydantic](docs/ServiceErrorPydantic.md)
  - [StatusDatabase](docs/StatusDatabase.md)
  - [StatusRedis](docs/StatusRedis.md)
  - [StatusTransactionEnum](docs/StatusTransactionEnum.md)
+ - [TestingSchema](docs/TestingSchema.md)
  - [TransactionBonusIntegrator](docs/TransactionBonusIntegrator.md)
  - [TransactionChangeStatusRequest](docs/TransactionChangeStatusRequest.md)
  - [TransactionCreateRefill](docs/TransactionCreateRefill.md)
@@ -139,7 +163,12 @@ Class | Method | HTTP request | Description
 <a id="documentation-for-authorization"></a>
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+<a id="HTTPBearer"></a>
+### HTTPBearer
+
+- **Type**: Bearer authentication
 
 
 ## Author

@@ -29,9 +29,7 @@ class ServiceErrorPydantic(BaseModel):
     """ # noqa: E501
     message: StrictStr
     type: TypeErrorEnum
-    translate_path: StrictStr
-    details: StrictStr
-    __properties: ClassVar[List[str]] = ["message", "type", "translate_path", "details"]
+    __properties: ClassVar[List[str]] = ["message", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,9 +83,7 @@ class ServiceErrorPydantic(BaseModel):
 
         _obj = cls.model_validate({
             "message": obj.get("message"),
-            "type": obj.get("type"),
-            "translate_path": obj.get("translate_path"),
-            "details": obj.get("details")
+            "type": obj.get("type")
         })
         return _obj
 

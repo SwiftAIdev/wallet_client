@@ -17,22 +17,17 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InvoiceResponse(BaseModel):
+class TestingSchema(BaseModel):
     """
-    InvoiceResponse
+    TestingSchema
     """ # noqa: E501
-    id: Optional[StrictInt] = Field(default=None, description="ID счета")
-    inn: StrictStr
-    kpp: StrictStr
-    email: Optional[StrictStr] = '0'
-    phone_number: Optional[StrictStr] = '+79998887766'
-    name: Optional[StrictStr] = ''
-    __properties: ClassVar[List[str]] = ["id", "inn", "kpp", "email", "phone_number", "name"]
+    count_testing_day: Optional[StrictInt] = None
+    __properties: ClassVar[List[str]] = ["count_testing_day"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +47,7 @@ class InvoiceResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InvoiceResponse from a JSON string"""
+        """Create an instance of TestingSchema from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,7 +72,7 @@ class InvoiceResponse(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InvoiceResponse from a dict"""
+        """Create an instance of TestingSchema from a dict"""
         if obj is None:
             return None
 
@@ -85,12 +80,7 @@ class InvoiceResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "inn": obj.get("inn"),
-            "kpp": obj.get("kpp"),
-            "email": obj.get("email") if obj.get("email") is not None else '0',
-            "phone_number": obj.get("phone_number") if obj.get("phone_number") is not None else '+79998887766',
-            "name": obj.get("name") if obj.get("name") is not None else ''
+            "count_testing_day": obj.get("count_testing_day")
         })
         return _obj
 

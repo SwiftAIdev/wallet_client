@@ -7,8 +7,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **str** |  | 
 **type** | [**TypeErrorEnum**](TypeErrorEnum.md) |  | 
-**translate_path** | **str** |  | 
-**details** | **str** |  | 
 
 ## Example
 

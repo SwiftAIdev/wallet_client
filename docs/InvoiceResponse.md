@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **inn** | **str** |  | 
 **kpp** | **str** |  | 
 **email** | **str** |  | [optional] [default to '0']
-**phone_number** | **str** |  | [optional] [default to 'RUB']
+**phone_number** | **str** |  | [optional] [default to '+79998887766']
 **name** | **str** |  | [optional] [default to '']
 
 ## Example

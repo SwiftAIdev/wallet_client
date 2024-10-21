@@ -15,11 +15,13 @@ docs/InvoiceCreateResponse.md
 docs/InvoiceResponse.md
 docs/InvoiceSchema.md
 docs/PaginationRequest.md
+docs/PaginationRequestInvoiceResponse.md
 docs/PaginationRequestTransactionSchema.md
 docs/ServiceErrorPydantic.md
 docs/StatusDatabase.md
 docs/StatusRedis.md
 docs/StatusTransactionEnum.md
+docs/TestingSchema.md
 docs/TransactionApi.md
 docs/TransactionBonusIntegrator.md
 docs/TransactionChangeStatusRequest.md
@@ -41,6 +43,8 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_pagination_request_invoice_response.py
+test/test_testing_schema.py
 tox.ini
 wallet_client/__init__.py
 wallet_client/api/__init__.py
@@ -63,11 +67,13 @@ wallet_client/models/invoice_create_response.py
 wallet_client/models/invoice_response.py
 wallet_client/models/invoice_schema.py
 wallet_client/models/pagination_request.py
+wallet_client/models/pagination_request_invoice_response.py
 wallet_client/models/pagination_request_transaction_schema.py
 wallet_client/models/service_error_pydantic.py
 wallet_client/models/status_database.py
 wallet_client/models/status_redis.py
 wallet_client/models/status_transaction_enum.py
+wallet_client/models/testing_schema.py
 wallet_client/models/transaction_bonus_integrator.py
 wallet_client/models/transaction_change_status_request.py
 wallet_client/models/transaction_create_refill.py
