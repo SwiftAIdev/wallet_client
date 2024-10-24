@@ -43,8 +43,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_pagination_request_invoice_response.py
-test/test_testing_schema.py
 tox.ini
 wallet_client/__init__.py
 wallet_client/api/__init__.py
