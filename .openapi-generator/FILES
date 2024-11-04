@@ -3,6 +3,7 @@
 .gitlab-ci.yml
 .travis.yml
 README.md
+docs/ActSchema.md
 docs/CategoryTransactionEnum.md
 docs/CompanyApi.md
 docs/CompanyData.md
@@ -14,9 +15,10 @@ docs/InvoiceApi.md
 docs/InvoiceCreateResponse.md
 docs/InvoiceResponse.md
 docs/InvoiceSchema.md
-docs/PaginationRequest.md
 docs/PaginationRequestInvoiceResponse.md
 docs/PaginationRequestTransactionSchema.md
+docs/PaginationRequestTransactionSchemaRefill.md
+docs/PaginationRequestWalletSchema.md
 docs/ServiceErrorPydantic.md
 docs/StatusDatabase.md
 docs/StatusRedis.md
@@ -31,6 +33,7 @@ docs/TransactionSchema.md
 docs/TransactionSchemaCreateIncome.md
 docs/TransactionSchemaCreatePaymentServices.md
 docs/TransactionSchemaData.md
+docs/TransactionSchemaRefill.md
 docs/TypeErrorEnum.md
 docs/TypeTransactionEnum.md
 docs/UserWalletResponse.md
@@ -43,6 +46,10 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_act_schema.py
+test/test_pagination_request_transaction_schema_refill.py
+test/test_pagination_request_wallet_schema.py
+test/test_transaction_schema_refill.py
 tox.ini
 wallet_client/__init__.py
 wallet_client/api/__init__.py
@@ -56,6 +63,7 @@ wallet_client/api_response.py
 wallet_client/configuration.py
 wallet_client/exceptions.py
 wallet_client/models/__init__.py
+wallet_client/models/act_schema.py
 wallet_client/models/category_transaction_enum.py
 wallet_client/models/company_data.py
 wallet_client/models/expense_response.py
@@ -64,9 +72,10 @@ wallet_client/models/health_check_response.py
 wallet_client/models/invoice_create_response.py
 wallet_client/models/invoice_response.py
 wallet_client/models/invoice_schema.py
-wallet_client/models/pagination_request.py
 wallet_client/models/pagination_request_invoice_response.py
 wallet_client/models/pagination_request_transaction_schema.py
+wallet_client/models/pagination_request_transaction_schema_refill.py
+wallet_client/models/pagination_request_wallet_schema.py
 wallet_client/models/service_error_pydantic.py
 wallet_client/models/status_database.py
 wallet_client/models/status_redis.py
@@ -80,6 +89,7 @@ wallet_client/models/transaction_schema.py
 wallet_client/models/transaction_schema_create_income.py
 wallet_client/models/transaction_schema_create_payment_services.py
 wallet_client/models/transaction_schema_data.py
+wallet_client/models/transaction_schema_refill.py
 wallet_client/models/type_error_enum.py
 wallet_client/models/type_transaction_enum.py
 wallet_client/models/user_wallet_response.py

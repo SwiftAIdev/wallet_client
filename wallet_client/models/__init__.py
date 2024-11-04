@@ -14,6 +14,7 @@
 
 
 # import models into model package
+from wallet_client.models.act_schema import ActSchema
 from wallet_client.models.category_transaction_enum import CategoryTransactionEnum
 from wallet_client.models.company_data import CompanyData
 from wallet_client.models.expense_response import ExpenseResponse
@@ -22,9 +23,10 @@ from wallet_client.models.health_check_response import HealthCheckResponse
 from wallet_client.models.invoice_create_response import InvoiceCreateResponse
 from wallet_client.models.invoice_response import InvoiceResponse
 from wallet_client.models.invoice_schema import InvoiceSchema
-from wallet_client.models.pagination_request import PaginationRequest
 from wallet_client.models.pagination_request_invoice_response import PaginationRequestInvoiceResponse
 from wallet_client.models.pagination_request_transaction_schema import PaginationRequestTransactionSchema
+from wallet_client.models.pagination_request_transaction_schema_refill import PaginationRequestTransactionSchemaRefill
+from wallet_client.models.pagination_request_wallet_schema import PaginationRequestWalletSchema
 from wallet_client.models.service_error_pydantic import ServiceErrorPydantic
 from wallet_client.models.status_database import StatusDatabase
 from wallet_client.models.status_redis import StatusRedis
@@ -38,6 +40,7 @@ from wallet_client.models.transaction_schema import TransactionSchema
 from wallet_client.models.transaction_schema_create_income import TransactionSchemaCreateIncome
 from wallet_client.models.transaction_schema_create_payment_services import TransactionSchemaCreatePaymentServices
 from wallet_client.models.transaction_schema_data import TransactionSchemaData
+from wallet_client.models.transaction_schema_refill import TransactionSchemaRefill
 from wallet_client.models.type_error_enum import TypeErrorEnum
 from wallet_client.models.type_transaction_enum import TypeTransactionEnum
 from wallet_client.models.user_wallet_response import UserWalletResponse
