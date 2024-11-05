@@ -17,18 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List, Optional
-from wallet_client.models.status_transaction_enum import StatusTransactionEnum
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TransactionChangeStatusRequest(BaseModel):
+class StatisticByTestingResponse(BaseModel):
     """
-    TransactionChangeStatusRequest
+    StatisticByTestingResponse
     """ # noqa: E501
-    status: Optional[StatusTransactionEnum] = None
-    __properties: ClassVar[List[str]] = ["status"]
+    days_testing: StrictInt
+    count_transactions: StrictInt
+    average_expense: Union[StrictFloat, StrictInt]
+    expense: Union[StrictFloat, StrictInt]
+    start_data: datetime
+    end_data: datetime
+    __properties: ClassVar[List[str]] = ["days_testing", "count_transactions", "average_expense", "expense", "start_data", "end_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +53,7 @@ class TransactionChangeStatusRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TransactionChangeStatusRequest from a JSON string"""
+        """Create an instance of StatisticByTestingResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,7 +78,7 @@ class TransactionChangeStatusRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TransactionChangeStatusRequest from a dict"""
+        """Create an instance of StatisticByTestingResponse from a dict"""
         if obj is None:
             return None
 
@@ -81,7 +86,12 @@ class TransactionChangeStatusRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "status": obj.get("status")
+            "days_testing": obj.get("days_testing"),
+            "count_transactions": obj.get("count_transactions"),
+            "average_expense": obj.get("average_expense"),
+            "expense": obj.get("expense"),
+            "start_data": obj.get("start_data"),
+            "end_data": obj.get("end_data")
         })
         return _obj
 

@@ -12,6 +12,8 @@ Method | HTTP request | Description
 [**v1_get_file_act_by_id**](TransactionApi.md#v1_get_file_act_by_id) | **GET** /v1/users/{user_id}/acts/{act_id}/file | Users:Get Act By Id:File
 [**v1_get_file_invoice_by_id**](TransactionApi.md#v1_get_file_invoice_by_id) | **GET** /v1/users/{user_id}/invoice/{invoice_id}/file | Users:Get Invoice By Id:File
 [**v1_get_refills**](TransactionApi.md#v1_get_refills) | **GET** /v1/users/{user_id}/refills | Users:Get Refills
+[**v1_get_statistic_by_testing**](TransactionApi.md#v1_get_statistic_by_testing) | **GET** /v1/users/{user_id}/statistic/testing | Users:Get Statistic By Testing
+[**v1_get_status_refill_transaction**](TransactionApi.md#v1_get_status_refill_transaction) | **GET** /v1/users/{user_id}/refills/{transaction_id}/status | Users:Get Status Refill Transaction
 [**v1_get_transaction_by_id**](TransactionApi.md#v1_get_transaction_by_id) | **GET** /v1/users/{user_id}/transactions/{transaction_id} | Users:Get Transaction By Id
 [**v1_get_transactions**](TransactionApi.md#v1_get_transactions) | **GET** /v1/users/{user_id}/transactions | Users:Get Transactions
 [**v1_payment_transaction**](TransactionApi.md#v1_payment_transaction) | **POST** /v1/users/{user_id}/payment_transaction | Users:Payment Transaction
@@ -57,7 +59,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     user_id = 'user_id_example' # str | 
     transaction_id = 'transaction_id_example' # str | 
     transaction_change_status_request = wallet_client.TransactionChangeStatusRequest() # TransactionChangeStatusRequest | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Change Status Transaction
@@ -78,7 +80,7 @@ Name | Type | Description  | Notes
  **user_id** | **str**|  | 
  **transaction_id** | **str**|  | 
  **transaction_change_status_request** | [**TransactionChangeStatusRequest**](TransactionChangeStatusRequest.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -142,7 +144,7 @@ configuration = wallet_client.Configuration(
 with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.TransactionApi(api_client)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Close Acts
@@ -160,7 +162,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -224,7 +226,7 @@ configuration = wallet_client.Configuration(
 with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.TransactionApi(api_client)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Confirming Invoices
@@ -242,7 +244,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -307,7 +309,7 @@ configuration = wallet_client.Configuration(
 with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.TransactionApi(api_client)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:End Old Transactions
@@ -325,7 +327,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -392,7 +394,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.TransactionApi(api_client)
     user_id = 'user_id_example' # str | 
     days = 30 # int |  (optional) (default to 30)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Expenses
@@ -412,7 +414,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **days** | **int**|  | [optional] [default to 30]
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -478,7 +480,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.TransactionApi(api_client)
     user_id = 'user_id_example' # str | 
     act_id = 56 # int | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Act By Id:File
@@ -496,7 +498,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **act_id** | **int**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -562,7 +564,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.TransactionApi(api_client)
     user_id = 'user_id_example' # str | 
     invoice_id = 56 # int | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Invoice By Id:File
@@ -580,7 +582,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **invoice_id** | **int**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -648,7 +650,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     user_id = 'user_id_example' # str | 
     page = 1 # int |  (optional) (default to 1)
     size = 25 # int |  (optional) (default to 25)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Refills
@@ -669,11 +671,183 @@ Name | Type | Description  | Notes
  **user_id** | **str**|  | 
  **page** | **int**|  | [optional] [default to 1]
  **size** | **int**|  | [optional] [default to 25]
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
 [**PaginationRequestTransactionSchemaRefill**](PaginationRequestTransactionSchemaRefill.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**204** | Not Found |  -  |
+**409** | Conflict |  -  |
+**422** | Unprocessable Entity |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_get_statistic_by_testing**
+> StatisticByTestingResponse v1_get_statistic_by_testing(user_id, x_request_id=x_request_id)
+
+Users:Get Statistic By Testing
+
+### Example
+
+* Bearer Authentication (HTTPBearer):
+
+```python
+import wallet_client
+from wallet_client.models.statistic_by_testing_response import StatisticByTestingResponse
+from wallet_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /wallet_service/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet_client.Configuration(
+    host = "/wallet_service/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: HTTPBearer
+configuration = wallet_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wallet_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet_client.TransactionApi(api_client)
+    user_id = 'user_id_example' # str | 
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
+
+    try:
+        # Users:Get Statistic By Testing
+        api_response = api_instance.v1_get_statistic_by_testing(user_id, x_request_id=x_request_id)
+        print("The response of TransactionApi->v1_get_statistic_by_testing:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->v1_get_statistic_by_testing: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**|  | 
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
+
+### Return type
+
+[**StatisticByTestingResponse**](StatisticByTestingResponse.md)
+
+### Authorization
+
+[HTTPBearer](../README.md#HTTPBearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Forbidden |  -  |
+**204** | Not Found |  -  |
+**409** | Conflict |  -  |
+**422** | Unprocessable Entity |  -  |
+**500** | Internal Server Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_get_status_refill_transaction**
+> StatusRefillTransaction v1_get_status_refill_transaction(user_id, transaction_id, x_request_id=x_request_id)
+
+Users:Get Status Refill Transaction
+
+### Example
+
+* Bearer Authentication (HTTPBearer):
+
+```python
+import wallet_client
+from wallet_client.models.status_refill_transaction import StatusRefillTransaction
+from wallet_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to /wallet_service/api
+# See configuration.py for a list of all supported configuration parameters.
+configuration = wallet_client.Configuration(
+    host = "/wallet_service/api"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: HTTPBearer
+configuration = wallet_client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with wallet_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = wallet_client.TransactionApi(api_client)
+    user_id = 'user_id_example' # str | 
+    transaction_id = 'transaction_id_example' # str | 
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
+
+    try:
+        # Users:Get Status Refill Transaction
+        api_response = api_instance.v1_get_status_refill_transaction(user_id, transaction_id, x_request_id=x_request_id)
+        print("The response of TransactionApi->v1_get_status_refill_transaction:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling TransactionApi->v1_get_status_refill_transaction: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | **str**|  | 
+ **transaction_id** | **str**|  | 
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
+
+### Return type
+
+[**StatusRefillTransaction**](StatusRefillTransaction.md)
 
 ### Authorization
 
@@ -736,7 +910,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.TransactionApi(api_client)
     user_id = 'user_id_example' # str | 
     transaction_id = 'transaction_id_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Transaction By Id
@@ -756,7 +930,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **transaction_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -824,7 +998,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     user_id = 'user_id_example' # str | 
     page = 1 # int |  (optional) (default to 1)
     size = 25 # int |  (optional) (default to 25)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Transactions
@@ -845,7 +1019,7 @@ Name | Type | Description  | Notes
  **user_id** | **str**|  | 
  **page** | **int**|  | [optional] [default to 1]
  **size** | **int**|  | [optional] [default to 25]
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -913,7 +1087,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.TransactionApi(api_client)
     user_id = 'user_id_example' # str | 
     transaction_schema_create_payment_services = wallet_client.TransactionSchemaCreatePaymentServices() # TransactionSchemaCreatePaymentServices | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Payment Transaction
@@ -933,7 +1107,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **transaction_schema_create_payment_services** | [**TransactionSchemaCreatePaymentServices**](TransactionSchemaCreatePaymentServices.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -1001,7 +1175,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.TransactionApi(api_client)
     user_id = 'user_id_example' # str | 
     transaction_schema_create_income = wallet_client.TransactionSchemaCreateIncome() # TransactionSchemaCreateIncome | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Refill Transaction
@@ -1021,7 +1195,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **transaction_schema_create_income** | [**TransactionSchemaCreateIncome**](TransactionSchemaCreateIncome.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 

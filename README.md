@@ -77,7 +77,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.CompanyApi(api_client)
     inn = 'inn_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Company:Info
@@ -107,6 +107,8 @@ Class | Method | HTTP request | Description
 *TransactionApi* | [**v1_get_file_act_by_id**](docs/TransactionApi.md#v1_get_file_act_by_id) | **GET** /v1/users/{user_id}/acts/{act_id}/file | Users:Get Act By Id:File
 *TransactionApi* | [**v1_get_file_invoice_by_id**](docs/TransactionApi.md#v1_get_file_invoice_by_id) | **GET** /v1/users/{user_id}/invoice/{invoice_id}/file | Users:Get Invoice By Id:File
 *TransactionApi* | [**v1_get_refills**](docs/TransactionApi.md#v1_get_refills) | **GET** /v1/users/{user_id}/refills | Users:Get Refills
+*TransactionApi* | [**v1_get_statistic_by_testing**](docs/TransactionApi.md#v1_get_statistic_by_testing) | **GET** /v1/users/{user_id}/statistic/testing | Users:Get Statistic By Testing
+*TransactionApi* | [**v1_get_status_refill_transaction**](docs/TransactionApi.md#v1_get_status_refill_transaction) | **GET** /v1/users/{user_id}/refills/{transaction_id}/status | Users:Get Status Refill Transaction
 *TransactionApi* | [**v1_get_transaction_by_id**](docs/TransactionApi.md#v1_get_transaction_by_id) | **GET** /v1/users/{user_id}/transactions/{transaction_id} | Users:Get Transaction By Id
 *TransactionApi* | [**v1_get_transactions**](docs/TransactionApi.md#v1_get_transactions) | **GET** /v1/users/{user_id}/transactions | Users:Get Transactions
 *TransactionApi* | [**v1_payment_transaction**](docs/TransactionApi.md#v1_payment_transaction) | **POST** /v1/users/{user_id}/payment_transaction | Users:Payment Transaction
@@ -128,6 +130,7 @@ Class | Method | HTTP request | Description
  - [CategoryTransactionEnum](docs/CategoryTransactionEnum.md)
  - [CompanyData](docs/CompanyData.md)
  - [ExpenseResponse](docs/ExpenseResponse.md)
+ - [GetApiV1InvoiceInvoiceIdInfoResponse200Status](docs/GetApiV1InvoiceInvoiceIdInfoResponse200Status.md)
  - [HealthCheckDetailsSchema](docs/HealthCheckDetailsSchema.md)
  - [HealthCheckResponse](docs/HealthCheckResponse.md)
  - [InvoiceCreateResponse](docs/InvoiceCreateResponse.md)
@@ -138,8 +141,10 @@ Class | Method | HTTP request | Description
  - [PaginationRequestTransactionSchemaRefill](docs/PaginationRequestTransactionSchemaRefill.md)
  - [PaginationRequestWalletSchema](docs/PaginationRequestWalletSchema.md)
  - [ServiceErrorPydantic](docs/ServiceErrorPydantic.md)
+ - [StatisticByTestingResponse](docs/StatisticByTestingResponse.md)
  - [StatusDatabase](docs/StatusDatabase.md)
  - [StatusRedis](docs/StatusRedis.md)
+ - [StatusRefillTransaction](docs/StatusRefillTransaction.md)
  - [StatusTransactionEnum](docs/StatusTransactionEnum.md)
  - [TestingSchema](docs/TestingSchema.md)
  - [TransactionBonusIntegrator](docs/TransactionBonusIntegrator.md)

@@ -9,6 +9,7 @@ docs/CompanyApi.md
 docs/CompanyData.md
 docs/DefaultApi.md
 docs/ExpenseResponse.md
+docs/GetApiV1InvoiceInvoiceIdInfoResponse200Status.md
 docs/HealthCheckDetailsSchema.md
 docs/HealthCheckResponse.md
 docs/InvoiceApi.md
@@ -20,8 +21,10 @@ docs/PaginationRequestTransactionSchema.md
 docs/PaginationRequestTransactionSchemaRefill.md
 docs/PaginationRequestWalletSchema.md
 docs/ServiceErrorPydantic.md
+docs/StatisticByTestingResponse.md
 docs/StatusDatabase.md
 docs/StatusRedis.md
+docs/StatusRefillTransaction.md
 docs/StatusTransactionEnum.md
 docs/TestingSchema.md
 docs/TransactionApi.md
@@ -46,10 +49,9 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_act_schema.py
-test/test_pagination_request_transaction_schema_refill.py
-test/test_pagination_request_wallet_schema.py
-test/test_transaction_schema_refill.py
+test/test_get_api_v1_invoice_invoice_id_info_response200_status.py
+test/test_statistic_by_testing_response.py
+test/test_status_refill_transaction.py
 tox.ini
 wallet_client/__init__.py
 wallet_client/api/__init__.py
@@ -67,6 +69,7 @@ wallet_client/models/act_schema.py
 wallet_client/models/category_transaction_enum.py
 wallet_client/models/company_data.py
 wallet_client/models/expense_response.py
+wallet_client/models/get_api_v1_invoice_invoice_id_info_response200_status.py
 wallet_client/models/health_check_details_schema.py
 wallet_client/models/health_check_response.py
 wallet_client/models/invoice_create_response.py
@@ -77,8 +80,10 @@ wallet_client/models/pagination_request_transaction_schema.py
 wallet_client/models/pagination_request_transaction_schema_refill.py
 wallet_client/models/pagination_request_wallet_schema.py
 wallet_client/models/service_error_pydantic.py
+wallet_client/models/statistic_by_testing_response.py
 wallet_client/models/status_database.py
 wallet_client/models/status_redis.py
+wallet_client/models/status_refill_transaction.py
 wallet_client/models/status_transaction_enum.py
 wallet_client/models/testing_schema.py
 wallet_client/models/transaction_bonus_integrator.py

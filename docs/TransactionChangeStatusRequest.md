@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | [**StatusTransactionEnum**](StatusTransactionEnum.md) |  | 
+**status** | [**StatusTransactionEnum**](StatusTransactionEnum.md) |  | [optional] 
 
 ## Example
 

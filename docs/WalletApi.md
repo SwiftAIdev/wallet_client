@@ -50,7 +50,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Create Wallet
@@ -69,7 +69,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -135,7 +135,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:End Wallet Testing
@@ -154,7 +154,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -220,7 +220,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Wallet
@@ -239,7 +239,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -316,7 +316,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     testing_end__lt = '2013-10-20T19:20:30+01:00' # datetime |  (optional)
     testing_end__isnull = True # bool |  (optional)
     is_testing = True # bool |  (optional)
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Wallets
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
  **testing_end__lt** | **datetime**|  | [optional] 
  **testing_end__isnull** | **bool**|  | [optional] 
  **is_testing** | **bool**|  | [optional] 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -412,7 +412,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Get Wallets Invited
@@ -431,7 +431,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -499,7 +499,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
     testing_schema = wallet_client.TestingSchema() # TestingSchema | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Resume Wallet Testing
@@ -519,7 +519,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **testing_schema** | [**TestingSchema**](TestingSchema.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -587,7 +587,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
     testing_schema = wallet_client.TestingSchema() # TestingSchema | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Start Wallet Testing
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **testing_schema** | [**TestingSchema**](TestingSchema.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 
@@ -673,7 +673,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.WalletApi(api_client)
     user_id = 'user_id_example' # str | 
-    x_request_id = '4bb1364c-a33a-49d9-aa65-5b982ec0f864' # str |  (optional) (default to '4bb1364c-a33a-49d9-aa65-5b982ec0f864')
+    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
 
     try:
         # Users:Stop Wallet Testing
@@ -692,7 +692,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;4bb1364c-a33a-49d9-aa65-5b982ec0f864&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
 
 ### Return type
 

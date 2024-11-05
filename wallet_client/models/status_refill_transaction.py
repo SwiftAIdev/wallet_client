@@ -17,18 +17,23 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from wallet_client.models.category_transaction_enum import CategoryTransactionEnum
+from wallet_client.models.get_api_v1_invoice_invoice_id_info_response200_status import GetApiV1InvoiceInvoiceIdInfoResponse200Status
 from wallet_client.models.status_transaction_enum import StatusTransactionEnum
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TransactionChangeStatusRequest(BaseModel):
+class StatusRefillTransaction(BaseModel):
     """
-    TransactionChangeStatusRequest
+    StatusRefillTransaction
     """ # noqa: E501
+    id: Optional[StrictStr] = Field(default=None, description="ID транзакции")
+    category: Optional[CategoryTransactionEnum] = None
     status: Optional[StatusTransactionEnum] = None
-    __properties: ClassVar[List[str]] = ["status"]
+    status_tinkoff: Optional[GetApiV1InvoiceInvoiceIdInfoResponse200Status] = None
+    __properties: ClassVar[List[str]] = ["id", "category", "status", "status_tinkoff"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +53,7 @@ class TransactionChangeStatusRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TransactionChangeStatusRequest from a JSON string"""
+        """Create an instance of StatusRefillTransaction from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,7 +78,7 @@ class TransactionChangeStatusRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TransactionChangeStatusRequest from a dict"""
+        """Create an instance of StatusRefillTransaction from a dict"""
         if obj is None:
             return None
 
@@ -81,7 +86,10 @@ class TransactionChangeStatusRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "status": obj.get("status")
+            "id": obj.get("id"),
+            "category": obj.get("category"),
+            "status": obj.get("status"),
+            "status_tinkoff": obj.get("status_tinkoff")
         })
         return _obj
 
