@@ -49,9 +49,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_get_api_v1_invoice_invoice_id_info_response200_status.py
-test/test_statistic_by_testing_response.py
-test/test_status_refill_transaction.py
 tox.ini
 wallet_client/__init__.py
 wallet_client/api/__init__.py

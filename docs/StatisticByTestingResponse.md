@@ -8,7 +8,10 @@ Name | Type | Description | Notes
 **days_testing** | **int** |  | 
 **count_transactions** | **int** |  | 
 **average_expense** | **float** |  | 
+**average_expense_min** | **float** |  | 
+**number_minutes** | **float** |  | 
 **expense** | **float** |  | 
+**predicted_expense** | **float** |  | 
 **start_data** | **datetime** |  | 
 **end_data** | **datetime** |  | 
 

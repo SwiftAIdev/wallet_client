@@ -47,7 +47,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.InvoiceApi(api_client)
     user_id = 'user_id_example' # str | 
     invoice_create_response = wallet_client.InvoiceCreateResponse() # InvoiceCreateResponse | 
-    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
+    x_request_id = '7aec7dfc-f84a-4595-8d0d-8cf694721112' # str |  (optional) (default to '7aec7dfc-f84a-4595-8d0d-8cf694721112')
 
     try:
         # Users:Create Invoice
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **invoice_create_response** | [**InvoiceCreateResponse**](InvoiceCreateResponse.md)|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;7aec7dfc-f84a-4595-8d0d-8cf694721112&#39;]
 
 ### Return type
 
@@ -134,7 +134,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     api_instance = wallet_client.InvoiceApi(api_client)
     user_id = 'user_id_example' # str | 
     invoice_id = 56 # int | 
-    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
+    x_request_id = '7aec7dfc-f84a-4595-8d0d-8cf694721112' # str |  (optional) (default to '7aec7dfc-f84a-4595-8d0d-8cf694721112')
 
     try:
         # Users:Get Invoice By Id
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **str**|  | 
  **invoice_id** | **int**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;7aec7dfc-f84a-4595-8d0d-8cf694721112&#39;]
 
 ### Return type
 
@@ -222,7 +222,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     user_id = 'user_id_example' # str | 
     page = 1 # int |  (optional) (default to 1)
     size = 25 # int |  (optional) (default to 25)
-    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
+    x_request_id = '7aec7dfc-f84a-4595-8d0d-8cf694721112' # str |  (optional) (default to '7aec7dfc-f84a-4595-8d0d-8cf694721112')
 
     try:
         # Users:Get Invoices
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
  **user_id** | **str**|  | 
  **page** | **int**|  | [optional] [default to 1]
  **size** | **int**|  | [optional] [default to 25]
- **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;7aec7dfc-f84a-4595-8d0d-8cf694721112&#39;]
 
 ### Return type
 

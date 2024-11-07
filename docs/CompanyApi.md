@@ -43,7 +43,7 @@ with wallet_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = wallet_client.CompanyApi(api_client)
     inn = 'inn_example' # str | 
-    x_request_id = '85f5bd03-8af0-4a0f-8fab-b596be01f315' # str |  (optional) (default to '85f5bd03-8af0-4a0f-8fab-b596be01f315')
+    x_request_id = '7aec7dfc-f84a-4595-8d0d-8cf694721112' # str |  (optional) (default to '7aec7dfc-f84a-4595-8d0d-8cf694721112')
 
     try:
         # Company:Info
@@ -62,7 +62,7 @@ with wallet_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **inn** | **str**|  | 
- **x_request_id** | **str**|  | [optional] [default to &#39;85f5bd03-8af0-4a0f-8fab-b596be01f315&#39;]
+ **x_request_id** | **str**|  | [optional] [default to &#39;7aec7dfc-f84a-4595-8d0d-8cf694721112&#39;]
 
 ### Return type
 

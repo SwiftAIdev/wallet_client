@@ -19,7 +19,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
-from typing import Any, ClassVar, Dict, List, Union
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,10 +30,13 @@ class StatisticByTestingResponse(BaseModel):
     days_testing: StrictInt
     count_transactions: StrictInt
     average_expense: Union[StrictFloat, StrictInt]
+    average_expense_min: Union[StrictFloat, StrictInt]
+    number_minutes: Union[StrictFloat, StrictInt]
     expense: Union[StrictFloat, StrictInt]
-    start_data: datetime
-    end_data: datetime
-    __properties: ClassVar[List[str]] = ["days_testing", "count_transactions", "average_expense", "expense", "start_data", "end_data"]
+    predicted_expense: Union[StrictFloat, StrictInt]
+    start_data: Optional[datetime]
+    end_data: Optional[datetime]
+    __properties: ClassVar[List[str]] = ["days_testing", "count_transactions", "average_expense", "average_expense_min", "number_minutes", "expense", "predicted_expense", "start_data", "end_data"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,6 +77,16 @@ class StatisticByTestingResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if start_data (nullable) is None
+        # and model_fields_set contains the field
+        if self.start_data is None and "start_data" in self.model_fields_set:
+            _dict['start_data'] = None
+
+        # set to None if end_data (nullable) is None
+        # and model_fields_set contains the field
+        if self.end_data is None and "end_data" in self.model_fields_set:
+            _dict['end_data'] = None
+
         return _dict
 
     @classmethod
@@ -89,7 +102,10 @@ class StatisticByTestingResponse(BaseModel):
             "days_testing": obj.get("days_testing"),
             "count_transactions": obj.get("count_transactions"),
             "average_expense": obj.get("average_expense"),
+            "average_expense_min": obj.get("average_expense_min"),
+            "number_minutes": obj.get("number_minutes"),
             "expense": obj.get("expense"),
+            "predicted_expense": obj.get("predicted_expense"),
             "start_data": obj.get("start_data"),
             "end_data": obj.get("end_data")
         })
